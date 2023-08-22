@@ -515,8 +515,6 @@
                 </h3>
             </div>
         </div>
-
-
         <div class="page page4">
             <div class="photo-wrap">
                 <div class="full-bg js-animate animated animation-5000"
@@ -643,8 +641,6 @@
                 </h3>
             </div>
         </div>
-
-
         <div class="page page5">
             <div class="photo-wrap">
                 <div class="photo-box js-animate animated animation-2000" data-animate="fadeIn" data-time="500"
@@ -668,10 +664,10 @@
         <div class="page page6">
             <div class="photo-wrap">
                 <div class="photo-box js-animate animated animation-2000" data-animate="fadeInUp" data-time="500"
-                     style="position: absolute;width: 100%;height: 100%;top: 0;left: 0;z-index: 3;
+                     style="position: absolute;width: 100%;height: 100%;top: 0;left: 0;z-index: 1;
                         background-image: url(./public/photo/p-6-1.jpg);"></div>
                 <div class="photo-box js-animate animated animation-2000" data-animate="fadeIn" data-time="3000"
-                     style="position: absolute;width: 100%;height: 100%;top: 0;left: 0;z-index: 4;
+                     style="position: absolute;width: 100%;height: 100%;top: 0;left: 0;z-index: 2;
                         background-image: url(./public/photo/p-6-2.jpg);"></div>
                 <div class="text-frame js-animate animated" data-animate="zoomInLeft" data-time="1000"
                      data-sec="pulseing"
@@ -777,7 +773,7 @@
                     </div>
                 </div>
                 <div style="position: absolute;top: 31%;text-align: center;">
-                    <div class="tel-me" >
+                    <div class="tel-me">
                         <img class="photo-box"
                              src="./public/photo/p-10-1.jpg"/>
                         <img class="photo-box"
@@ -796,14 +792,14 @@
                         <img src="./public/meta/dh.png" alt="" class="dh-img">
                     </div>
                 </div>
-                <div class="js-animate animated" data-animate="bounceInUp" data-time="3800"
-                     style="position: absolute;top: 81%;left: 0;width: 100%;text-align: center;color: #3a3f58;font-size: 14px;">
+                <div class="js-animate animated" data-animate="bounceInUp" data-time="3000"
+                     style="position: absolute;top: 85%;left: 0;width: 100%;text-align: center;color: #3a3f58;font-size: 14px;">
                     欢迎10月02日参加我们的婚礼
                 </div>
-                <div class="js-animate animated animation-2000" data-animate="zoomIn" data-time="5000"
-                     style="position: absolute;top: 88%;left: 0;width: 100%;text-align: center;">
-                    <img src="./public/meta/invitation.png" style="max-width: 75%;">
-                </div>
+                <!--                <div class="js-animate animated animation-2000" data-animate="zoomIn" data-time="5000"-->
+                <!--                     style="position: absolute;top: 88%;left: 0;width: 100%;text-align: center;">-->
+                <!--                    <img src="./public/meta/invitation.png" style="max-width: 75%;">-->
+                <!--                </div>-->
             </div>
         </div>
 
@@ -850,8 +846,12 @@
         });
       },
       afterChange: function (e) {
-        if (e.cur === 5 && !mapFlag) {
-          initMap()
+        try {
+          if (e.cur === 9 && !mapFlag) {
+            initMap()
+          }
+        } catch (e) {
+          console.log(e);
         }
 
         domLists = document.querySelectorAll('.page')[e.cur].querySelectorAll('.js-animate')
